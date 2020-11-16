@@ -1,3 +1,11 @@
+# RoBERTa pretrained
+model_base = 'microsoft/codebert-base'
+
+# Train file directory
+train_file_dir = "python_train_val/train.txt"
+
+# Trained model save directory. Also used for loading saved model.
+model_file_dir = "roberta-model.pt"
 
 # Maximum input sequence length for neural neetwork model
 max_seq_length=50
