@@ -68,9 +68,11 @@ def main():
 
 	train_dataset = create_dataset(train_features)
 
-	optimizer = AdamW(model.parameters(), lr=learning_rate, eps=adam_epsilon)
+	optimizer = AdamW(model.parameters(), lr=cf.learning_rate, eps=cf.adam_epsilon)
 
-	global_step, training_loss = train(dataset, model, optimizer)
+	global_step, training_loss = train(dataset, model, optimizer, 
+									   batch_size=cf.train_batch_size, 
+									   num_epochs=cf.num_epochs)
 
 	torch.save(model.state_dict(), cf.model_file_dir)
 
